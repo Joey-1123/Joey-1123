@@ -13,7 +13,7 @@
 + Obsessed with clean, smooth Android experiences
 + Reviving AOSP, one patch at a time
 
-🟢 Maintainer for RisingOS Revived & AEX Revived
+🟢 Maintainer for RisingOS Revived (Un- offical) & AEX Revived
 
 🟣 Learning Android Internals, AI Concepts, and Kernel Wizardry
 
