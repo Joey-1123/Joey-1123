@@ -59,10 +59,13 @@ AI Tweaks	💡 Exploring	Early-stage learning, practical use
 💻 Current Learning Radar
 
 <p align="center">
-  <img src="https://img.shields.io/badge/C%2B%2B-Core-blue?style=for-the-badge&logo=cplusplus&logoColor=white" />
+  <img src="https://img.shields.io/badge/C%2B%2B-70%25-blue?style=for-the-badge&logo=cplusplus&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python%20%2F%20MicroPython-90%25-yellow?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Java-Learning-orange?style=for-the-badge&logo=java&logoColor=white" />
   <img src="https://img.shields.io/badge/AI%20Analysis-5%2F10-9cf?style=for-the-badge&logo=openai&logoColor=white" />
-</p>📌 C, C++: Deep dive for kernel and HAL tweaks
+</p>📌 C++ (70%): Deep dive for kernel and HAL tweaks
+
+📌 Python / MicroPython (90%): Practical scripting, AI, automation
 
 📌 Java: Expanding Android app knowledge
 
@@ -107,4 +110,9 @@ AI Tweaks	💡 Exploring	Early-stage learning, practical use
 
 <p align="center">
   <b>“AOSP is my canvas, commits are my brush strokes.”</b>
+</p>
+---
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=150&section=footer&text=Thank%20You%20for%20Visiting%20💻&fontColor=ffffff&fontSize=20"/>
 </p>
