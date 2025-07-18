@@ -57,7 +57,7 @@ Each commit reflects my passion for Android and open-source development.
 <p>
   <img alt="C++" src="https://img.shields.io/badge/C++-00599C?style=flat&logo=c%2B%2B&logoColor=white" />
   <img alt="C" src="https://img.shields.io/badge/C-00599C?style=flat&logo=c%2B%2B&logoColor=white" />
-  <img alt="Java" src="https://img.shields.io/badge/Java-00599C?style=flat&logo=c%2B%2B&logoColor=white" />
+  <img alt="Java" src="https://img.shields.io/badge/JS-00599C?style=flat&logo=c%2B%2B&logoColor=white" />
   <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
   <img alt="MicroPython" src="https://img.shields.io/badge/MicroPython-2C3E50?style=flat&logo=python&logoColor=white" />
 </p>
