@@ -1,3 +1,10 @@
+# Hey there, I'm Joey! 👋
+
+Android ROM enthusiast for OnePlus Nord (avicii)!  
+Building and learning, one commit at a time.
+
+
+
 # Joey-SHUBHAM-PANCHAL-
 <!-- Visitor Badge -->
 <img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=Joey-1123.Joey-1123" />
