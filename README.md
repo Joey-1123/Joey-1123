@@ -1,7 +1,7 @@
 🚀 Joey | Android Artisan 👨‍💻
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=00FFFF&center=true&vCenter=true&width=700&lines=RisingOS+%2B+AEX+%2B+MistOS+Maintainer;Custom+ROM+Enthusiast+%7C+Android+Engineer;Exploring+AI+%7C+Kernel+Tweaks+%7C+OnePlus+Nord" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=00FFFF&center=true&vCenter=true&width=700&lines=AEX+Maintainer;Custom+ROM+Enthusiast+%7C+Android+Engineer;Exploring+AI+%7C+Kernel+Tweaks+%7C+OnePlus+Nord" alt="Typing SVG"/>
 </p><p align="center">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=Joey-1123.Joey-1123" alt="visitor badge"/>
 </p>
