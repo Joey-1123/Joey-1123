@@ -52,14 +52,15 @@ Each commit reflects my passion for Android and open-source development.
 
 ---
 
-## 💻 Languages Learned
+## 💻 Languages & Learning Journey
 
 <p>
   <img alt="C++" src="https://img.shields.io/badge/C++-00599C?style=flat&logo=c%2B%2B&logoColor=white" />
-  <img alt="C" src="https://img.shields.io/badge/C-00599C?style=flat&logo=c%2B%2B&logoColor=white" />
-  <img alt="Java" src="https://img.shields.io/badge/JS-00599C?style=flat&logo=c%2B%2B&logoColor=white" />
+  <img alt="C" src="https://img.shields.io/badge/C-00599C?style=flat&logo=c&logoColor=white" />
   <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
   <img alt="MicroPython" src="https://img.shields.io/badge/MicroPython-2C3E50?style=flat&logo=python&logoColor=white" />
+  <img alt="Java" src="https://img.shields.io/badge/Java-Learning-orange?style=flat&logo=java&logoColor=white" />
+  <img alt="AI Analysis" src="https://img.shields.io/badge/AI%20Analysis-5%2F10%20progress-9cf?style=flat&logo=openai&logoColor=white" />
 </p>
 
 ---
@@ -78,4 +79,4 @@ Each commit reflects my passion for Android and open-source development.
 
 ---
 
-Thanks for visiting my profile!
+Thanks for stopping by and checking out my work!
