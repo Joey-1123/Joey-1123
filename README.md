@@ -1,7 +1,7 @@
 # 🚀 Joey | Android Artisan 👨‍💻
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=00FFFF&center=true&vCenter=true&width=700&lines=AEX+Maintainer;Custom+ROM+Enthusiast+%7C+Android+Engineer;Exploring+AI+%7C+Kernel+Tweaks+%7C+OnePlus+Nord" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=00FFFF&center=true&vCenter=true&width=700&lines=AEX+Maintainer;Android+ROM+Enthusiast;AI+for+Productivity+%26+Learning;Kernel+Tweaker+%7C+OnePlus+Nord+Contributor" alt="Typing SVG"/>
 </p>
 <p align="center">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=Joey-1123.Joey-1123" alt="visitor badge"/>
@@ -11,20 +11,22 @@
 
 ## 🧬 About Me
 
-+ ROM Developer focused on clean, smooth Android experiences
-+ Reviving AOSP ecosystems one patch at a time
-+ Passionate about Android internals, AI concepts, and kernel wizardry
+🎓 **Current Status**: Second Year Student — B.Sc Artificial Intelligence & Machine Learning
 
-🟢 Maintainer for AEX OS (Unofficial - Active), RisingOS Revived (Unofficial), and Android Feature Porting Projects
+📱 **Android ROM Developer & Device Maintainer** — building optimized, clean Android ROMs focused on performance and user experience.
 
-🟣 Exploring AI in Android and full-time Linux migration (AX OS)
+🧠 **Exploring AI for Productivity and Learning** — blending Android development with AI tools to streamline workflows and learn smarter.
 
-🌐 **Location**: India 🇮🇳  
-📫 **Mail**: shubhampanchal9168@gmail.com
+🖥️ **Linux Power User** — AX OS is my **daily driver** and main workstation.
+
+📌 Focused on: Android ROMs (AEX OS - unofficial), feature porting, kernel tweaks, and open-source contributions.
+
+📫 **Email**: shubhampanchal9168@gmail.com  
+🌐 **Location**: India 🇮🇳
 
 ---
 
-## 🛠️ Tech Arsenal
+## 🛠️ Tech Stack I Use
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=linux,bash,git,androidstudio,vscode" />
@@ -33,70 +35,65 @@
   <img src="https://skillicons.dev/icons?i=c,cpp,java,python" />
 </p>
 
-- Linux (AX OS) — my battle station 🖥️  
-- Git & GitHub — my second language 🧑‍💻  
-- VSCode + Neovim — surgical code editing ⚙️
+- **Linux (AX OS)** — my main daily environment 🖥️  
+- **Git & GitHub** — efficient project version control 🧑‍💻  
+- **VSCode & Neovim** — productive coding setups ⚙️  
+- **Android Studio** — AOSP & custom ROM development 🔨  
 
 ---
 
-## 🌌 What I’m Building
+## 🌌 Projects I Maintain
 
-| 📱 Project | 🚦 Status | 📝 Highlights |
-|-------------|------------|----------------|
-| AEX OS | 🚀 Active | Clean UI, performance boosts, OnePlus Nord |
-| RisingOS Revived | 🟣 Unofficial | Nord optimization, Pixel-like features |
-| Android Feature Porting | 🧪 Experimental | Porting select Android features |
-| AX OS Setup | ⚡️ Ongoing | Linux distro setup & customization |
-| AI Tweaks | 🧠 Learning | AI features in ROM ecosystems |
+| Project | Status | Focus |
+|----------|--------|-----------------------------|
+| **AEX OS (Unofficial)** | 🚀 Active | Performance-focused ROM for OnePlus Nord |
+| **RisingOS Revived (Unofficial)** | 🟣 Maintained | Nord optimization, experimental features |
+| **Android Feature Porting** | 🧪 Experimental | Porting Android features from newer devices |
+| **AI Tweaks** | 🧠 Ongoing | Building scripts & AI tools for Android and Linux |
 
 ---
 
-## 💻 Current Learning Radar
+## 💻 My Learning Focus
 
 <p align="center">
-  <img src="https://img.shields.io/badge/C%2B%2B-70%25-blue?style=for-the-badge&logo=cplusplus&logoColor=white" />
+  <img src="https://img.shields.io/badge/C++-70%25-blue?style=for-the-badge&logo=cplusplus&logoColor=white" />
   <img src="https://img.shields.io/badge/Python%20%2F%20MicroPython-90%25-yellow?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Java-Learning-orange?style=for-the-badge&logo=java&logoColor=white" />
   <img src="https://img.shields.io/badge/AI%20Analysis-5%2F10-9cf?style=for-the-badge&logo=openai&logoColor=white" />
 </p>
 
-📌 **C++ (70%)**: Android kernel tweaks, HALs  
-📌 **Python/MicroPython (90%)**: Scripting, automation, AI tools  
-📌 **Java**: Deepening Android app skills  
-📌 **AI Analysis (5/10)**: Android x AI experiments
+- **C++ (70%)** — Kernel tweaks, Android HAL understanding  
+- **Python/MicroPython (90%)** — Automation & AI workflows  
+- **Java** — App development & Android frameworks  
+- **AI Analysis (5/10)** — Integrating AI into Android & development flows
 
 ---
 
-## 🚀 GitHub Activity Dashboard
+## 📅 Device Maintainer Timeline
+
+| Year | Device | Focus |
+|------|---------|-------------------------------|
+| 2024-25 | OnePlus Nord (avicii) | RisingOS Revived (Unofficial) |
+| 2025 | OnePlus Nord | Android Feature Porting |
+| 2025+ | OnePlus Nord | AEX OS (Unofficial - Priority Focus) |
+
+---
+
+## 🚀 GitHub Highlights
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=Joey-1123&theme=tokyonight_duo&date_format=M%20j%5B%2C%20Y%5D" width="60%" alt="Streak Stats"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=Joey-1123&theme=tokyonight_duo&date_format=M%20j%5B%2C%20Y%5D" width="60%" />
 </p>
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Joey-1123&show_icons=true&theme=radical&hide_border=true&border_radius=15" width="47%" />
 </p>
-
----
-
-## 🏆 Contribution Highlights
-
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=Joey-1123&theme=radical&margin-w=10&no-frame=true&title=Commit,Repositories,PullRequest,Issues,Stars&column=5" />
 </p>
 
 ---
 
-## 📅 Device Maintainer Timeline
-
-| Year | Device | Project |
-|------|---------|---------|
-| 2024-25 | OnePlus Nord (avicii) | RisingOS Revived (Unofficial) |
-| 2025 | OnePlus Nord | Android Feature Porting |
-| 2025+ | OnePlus Nord | AEX OS (Unofficial Focus) |
-
----
-
-## 🌐 Connect with Me
+## 🌐 Let's Connect
 
 <p align="center">
   <a href="mailto:shubhampanchal9168@gmail.com"><img src="https://img.shields.io/badge/Gmail-Connect-red?style=for-the-badge&logo=gmail&logoColor=white"/></a>
@@ -107,7 +104,7 @@
 ---
 
 <p align="center">
-  <b><i>“AOSP is my canvas, commits are my brush strokes. Focused on speed, stability, and learning.”</i></b>
+  <b><i>“AOSP is my canvas, AI is my compass — building smoother, smarter, and more productive Android experiences.”</i></b>
 </p>
 
 <p align="center">
