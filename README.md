@@ -20,7 +20,6 @@
 
 - 🌄 [RisingOS Revived (OnePlus Nord)](https://github.com/Joey-1123/RisingOS)
 - 💥 [AospExtended Revived](https://github.com/Joey-1123/AEX-Revived)
-- 🔧 [Kernel Tweaks & Experiments](https://github.com/Joey-1123/Kernel-Projects)
 
 ---
 
@@ -51,7 +50,7 @@
 
 <p>
   <a href="mailto:shubhampanchal9168@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white" /></a>
-  <a href="https://t.me/YourTelegramUsername"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat&logo=telegram&logoColor=white" /></a>
+  <a href="https://t.me/JoeyOnRise"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat&logo=telegram&logoColor=white" /></a>
 </p>
 
 ---
