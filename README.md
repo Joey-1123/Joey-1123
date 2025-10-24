@@ -46,8 +46,7 @@
 
 | Project | Status | Focus |
 |----------|--------|-----------------------------|
-| **AEX OS (Unofficial)** | 🚀 Active | Performance-focused ROM for OnePlus Nord |
-| **RisingOS Revived (Unofficial)** | 🟣 Maintained | Nord optimization, experimental features |
+| **RisingOS-Revived (Unofficial)** | 🚀 Active |  ROM for OnePlus Nord |
 | **Android Feature Porting** | 🧪 Experimental | Porting Android features from newer devices |
 | **AI Tweaks** | 🧠 Ongoing | Building scripts & AI tools for Android and Linux |
 
@@ -74,8 +73,7 @@
 | Year | Device | Focus |
 |------|---------|-------------------------------|
 | 2024-25 | OnePlus Nord (avicii) | RisingOS Revived (Unofficial) |
-| 2025 | OnePlus Nord | Android Feature Porting |
-| 2025+ | OnePlus Nord | AEX OS (Unofficial - Priority Focus) |
+| 2025 | GALAXY S21U | Android Feature Porting |
 
 ---
 
