@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="572" viewBox="0 0 780 572">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .art { font-family: 'Courier New', Consolas, monospace; font-size: 11px; fill: #0969da; white-space: pre; }
+      .title { font-family: 'Courier New', Consolas, monospace; font-size: 15px; font-weight: bold; fill: #0969da; }
+      .sep { font-family: 'Courier New', Consolas, monospace; font-size: 11px; fill: #d0d7de; }
+      .key { font-family: 'Courier New', Consolas, monospace; font-size: 13px; fill: #656d76; white-space: pre; }
+      .val { font-family: 'Courier New', Consolas, monospace; font-size: 13px; font-weight: bold; fill: #1f2328; }
+    </style>
+  </defs>
+  <rect class="bg" width="100%" height="100%" rx="10" />
+    <text class="art" x="30" y="30" xml:space="preserve">!!!!!!!!!!!!~~!~~~~~~~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="44" xml:space="preserve">!!!!!!!!!!!!~!~~~~~~~~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="58" xml:space="preserve">!!!!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="72" xml:space="preserve">!!!!!!!!!!!!~!~~~~~~~~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="86" xml:space="preserve">!!!!!!!!!!!!!~~!~~~~~~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="100" xml:space="preserve">!!!!!!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="114" xml:space="preserve">!!!!!!!!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="128" xml:space="preserve">!!!!!!!!!!!!!!!~!!7~~~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="142" xml:space="preserve">!!!!!!!!!!!!!!!5BB#Y!~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="156" xml:space="preserve">!!!!!!!!!!!!7?B@@@&amp;&amp;!~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="170" xml:space="preserve">!!!!!!!!!!!J#&amp;@@@@&amp;G!~~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="184" xml:space="preserve">!!!!!!!!!!Y@@@@@@@&amp;PPJ~~~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="198" xml:space="preserve">!!!!!!!!!!#@@@@@@@@BPY?!~~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="212" xml:space="preserve">!!!!!!!!!Y@@@@@@@@##Y5GG7~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="226" xml:space="preserve">!!!!!!!!!#@@@@@@&amp;@#B5YJBP~~~~~~~~~~~~~</text>
+    <text class="art" x="30" y="240" xml:space="preserve">777!!!!!75@@@@@@@@&amp;#BY?5G!~!~~~~~~~~~~</text>
+    <text class="art" x="30" y="254" xml:space="preserve">7777!!777J@@@@@@##&amp;&amp;#G5YYJ~!!!~!~~~~~~</text>
+    <text class="art" x="30" y="268" xml:space="preserve">777777777?@@@@@@5##&amp;&amp;&amp;BP55J!!!!!!!!!~!</text>
+    <text class="art" x="30" y="282" xml:space="preserve">7777777777Y@@@@@#G#B&amp;&amp;&amp;#&amp;&amp;5!!!!!!!!!!!</text>
+    <text class="art" x="30" y="296" xml:space="preserve">77777777777Y@@@@@##&amp;&amp;&amp;&amp;@#J!!!!!!!!!!!!</text>
+    <text class="art" x="30" y="310" xml:space="preserve">JJJJJJJJJJJJ5#@@@&amp;#BBBBG??????????????</text>
+    <text class="art" x="30" y="324" xml:space="preserve">55555555YYYYYYB@@&amp;&amp;G55PJYYYYYYYYYYYYYY</text>
+    <text class="art" x="30" y="338" xml:space="preserve">55Y5YYYYYY5YYYYG&amp;&amp;&amp;BYY5YYYYYYYYJYYJJYY</text>
+    <text class="art" x="30" y="352" xml:space="preserve">555Y55YYYY555YYYYYP#Y?Y55P555PP5P5YYYY</text>
+    <text class="art" x="30" y="366" xml:space="preserve">YYYYYJJJJJJJJJJJJ7!?Y?Y?????JJJJJJJ??J</text>
+    <text class="art" x="30" y="380" xml:space="preserve">55Y555555YYY5P5J?7~^^!?Y55PPPPPJ7!7!7!</text>
+    <text class="art" x="30" y="394" xml:space="preserve">55555YY55555PG5?7~:^::^~5GGBBBBP5J?!!7</text>
+    <text class="art" x="30" y="408" xml:space="preserve">YYYJJJJJJJJJJYJ?7!:^~.^^^YYY555YYJJ??J</text>
+    <text class="art" x="30" y="422" xml:space="preserve">JJJJ?JJYYYJJ?JJ?7!^.^.^~^J?JJJJ???7?J?</text>
+    <text class="art" x="30" y="436" xml:space="preserve">?J?J7777JJYY?JJ??~~....^^777!7777777?!</text>
+    <text class="art" x="30" y="450" xml:space="preserve">?JJ?JJJ?77YJJJJ??7!:....:!~~~!!7!!7?77</text>
+    <text class="art" x="30" y="464" xml:space="preserve">JYYJYYYY??YYYJJ???~^:....?JYJJJJ??JYYY</text>
+    <text class="art" x="30" y="478" xml:space="preserve">YYYYYYYYYJYYYJJ7Y7~^:.:..!Y555555Y5YY5</text>
+    <text class="art" x="30" y="492" xml:space="preserve">5PPPPPPPP55YYYY?Y7~:.:^..^5555555PPPPP</text>
+    <text class="art" x="30" y="506" xml:space="preserve">5PPPPP5PPPPYYPYYY7~::^~..:5Y5555555555</text>
+    <text class="art" x="30" y="520" xml:space="preserve">YYYYYYYYYYY5YPYYY7~^^:~...JYYYYYYYYYYY</text>
+    <text class="art" x="30" y="534" xml:space="preserve">YYYYYYYYYYYP5PYYY!~~::~...?JJJJJJJJJYJ</text>
+    <text class="art" x="30" y="548" xml:space="preserve">YYYYYYYYYYY5PP5YY!~!.^~::.7JJJJJJJJJJJ</text>
+    <text class="title" x="300" y="30">shubham@joey</text>
+    <text class="sep" x="300" y="46">──────────────────────────────────────────</text>
+    <text class="key" x="300" y="70">Set up GH_TOKEN secret and run</text>
+    <text class="key" x="300" y="86">the Actions workflow to fetch</text>
+    <text class="key" x="300" y="102">your real GitHub stats!</text>
+    <text class="key" x="300" y="126">Name...........</text>
+    <text class="val" x="425" y="126">Joey</text>
+    <text class="key" x="300" y="143">Age............</text>
+    <text class="val" x="425" y="143">pending...</text>
+    <text class="key" x="300" y="160">Repos..........</text>
+    <text class="val" x="425" y="160">---</text>
+    <text class="key" x="300" y="177">Stars..........</text>
+    <text class="val" x="425" y="177">---</text>
+    <text class="key" x="300" y="194">LOC............</text>
+    <text class="val" x="425" y="194">---</text>
+    <text class="key" x="300" y="211">Contributed....</text>
+    <text class="val" x="425" y="211">---</text>
+    <text class="key" x="300" y="228">Followers......</text>
+    <text class="val" x="425" y="228">---</text>
+    <text class="key" x="300" y="245">Following......</text>
+    <text class="val" x="425" y="245">---</text>
+</svg>
