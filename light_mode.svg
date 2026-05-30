@@ -50,23 +50,20 @@
     <text class="art" x="30" y="548" xml:space="preserve">YYYYYYYYYYY5PP5YY!~!.^~::.7JJJJJJJJJJJ</text>
     <text class="title" x="300" y="30">shubham@joey</text>
     <text class="sep" x="300" y="46">──────────────────────────────────────────</text>
-    <text class="key" x="300" y="70">Set up GH_TOKEN secret and run</text>
-    <text class="key" x="300" y="86">the Actions workflow to fetch</text>
-    <text class="key" x="300" y="102">your real GitHub stats!</text>
-    <text class="key" x="300" y="126">Name...........</text>
-    <text class="val" x="425" y="126">Joey</text>
-    <text class="key" x="300" y="143">Age............</text>
-    <text class="val" x="425" y="143">pending...</text>
-    <text class="key" x="300" y="160">Repos..........</text>
-    <text class="val" x="425" y="160">---</text>
-    <text class="key" x="300" y="177">Stars..........</text>
-    <text class="val" x="425" y="177">---</text>
-    <text class="key" x="300" y="194">LOC............</text>
-    <text class="val" x="425" y="194">---</text>
-    <text class="key" x="300" y="211">Contributed....</text>
-    <text class="val" x="425" y="211">---</text>
-    <text class="key" x="300" y="228">Followers......</text>
-    <text class="val" x="425" y="228">---</text>
-    <text class="key" x="300" y="245">Following......</text>
-    <text class="val" x="425" y="245">---</text>
+    <text class="key" x="300" y="70">Name...........</text>
+    <text class="val" x="425" y="70">Shubham Panchal (Joey)</text>
+    <text class="key" x="300" y="87">Age............</text>
+    <text class="val" x="425" y="87">21y 29d</text>
+    <text class="key" x="300" y="104">Repos..........</text>
+    <text class="val" x="425" y="104">18</text>
+    <text class="key" x="300" y="121">Stars..........</text>
+    <text class="val" x="425" y="121">2</text>
+    <text class="key" x="300" y="138">LOC............</text>
+    <text class="val" x="425" y="138">0</text>
+    <text class="key" x="300" y="155">Contributed....</text>
+    <text class="val" x="425" y="155">18 repos</text>
+    <text class="key" x="300" y="172">Followers......</text>
+    <text class="val" x="425" y="172">4</text>
+    <text class="key" x="300" y="189">Following......</text>
+    <text class="val" x="425" y="189">5</text>
 </svg>
