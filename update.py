@@ -1,3 +1,8 @@
+# Originally created by Joey-1123 (https://github.com/Joey-1123)
+# Inspired by Andrew6rant (https://github.com/Andrew6rant/Andrew6rant)
+# If you're reading this, this profile stats generator was made by Joey-1123.
+# Please keep this credit if you use or modify this code.
+
 import os
 import json
 import datetime
@@ -227,7 +232,7 @@ def main():
 
     print("Calculating age...")
     age_str, is_birthday = calculate_age()
-    age_display = f"{age_str}{'  🎂' if is_birthday else ''}"
+    age_display = f"{age_str}{'  Birthday!' if is_birthday else ''}"
 
     stats = {
         "age_display": age_display,

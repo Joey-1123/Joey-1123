@@ -1,3 +1,5 @@
+# Originally created by Joey-1123 (https://github.com/Joey-1123)
+# Inspired by Andrew6rant (https://github.com/Andrew6rant/Andrew6rant)
 name: Update Profile Stats
 
 on:
@@ -29,6 +31,6 @@ jobs:
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "📊 Auto-update profile stats"
+          commit_message: "Auto-update profile stats"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
