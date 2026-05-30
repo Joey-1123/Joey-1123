@@ -1,69 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="780" height="572" viewBox="0 0 780 572">
-  <defs>
-    <style>
-      .bg { fill: #0d1117; }
-      .art { font-family: 'Courier New', Consolas, monospace; font-size: 11px; fill: #58a6ff; white-space: pre; }
-      .title { font-family: 'Courier New', Consolas, monospace; font-size: 15px; font-weight: bold; fill: #58a6ff; }
-      .sep { font-family: 'Courier New', Consolas, monospace; font-size: 11px; fill: #30363d; }
-      .key { font-family: 'Courier New', Consolas, monospace; font-size: 13px; fill: #8b949e; white-space: pre; }
-      .val { font-family: 'Courier New', Consolas, monospace; font-size: 13px; font-weight: bold; fill: #f0f6fc; }
-    </style>
-  </defs>
-  <rect class="bg" width="100%" height="100%" rx="10" />
-    <text class="art" x="30" y="30" xml:space="preserve">!!!!!!!!!!!!~~!~~~~~~~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="44" xml:space="preserve">!!!!!!!!!!!!~!~~~~~~~~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="58" xml:space="preserve">!!!!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="72" xml:space="preserve">!!!!!!!!!!!!~!~~~~~~~~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="86" xml:space="preserve">!!!!!!!!!!!!!~~!~~~~~~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="100" xml:space="preserve">!!!!!!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="114" xml:space="preserve">!!!!!!!!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="128" xml:space="preserve">!!!!!!!!!!!!!!!~!!7~~~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="142" xml:space="preserve">!!!!!!!!!!!!!!!5BB#Y!~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="156" xml:space="preserve">!!!!!!!!!!!!7?B@@@&amp;&amp;!~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="170" xml:space="preserve">!!!!!!!!!!!J#&amp;@@@@&amp;G!~~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="184" xml:space="preserve">!!!!!!!!!!Y@@@@@@@&amp;PPJ~~~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="198" xml:space="preserve">!!!!!!!!!!#@@@@@@@@BPY?!~~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="212" xml:space="preserve">!!!!!!!!!Y@@@@@@@@##Y5GG7~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="226" xml:space="preserve">!!!!!!!!!#@@@@@@&amp;@#B5YJBP~~~~~~~~~~~~~</text>
-    <text class="art" x="30" y="240" xml:space="preserve">777!!!!!75@@@@@@@@&amp;#BY?5G!~!~~~~~~~~~~</text>
-    <text class="art" x="30" y="254" xml:space="preserve">7777!!777J@@@@@@##&amp;&amp;#G5YYJ~!!!~!~~~~~~</text>
-    <text class="art" x="30" y="268" xml:space="preserve">777777777?@@@@@@5##&amp;&amp;&amp;BP55J!!!!!!!!!~!</text>
-    <text class="art" x="30" y="282" xml:space="preserve">7777777777Y@@@@@#G#B&amp;&amp;&amp;#&amp;&amp;5!!!!!!!!!!!</text>
-    <text class="art" x="30" y="296" xml:space="preserve">77777777777Y@@@@@##&amp;&amp;&amp;&amp;@#J!!!!!!!!!!!!</text>
-    <text class="art" x="30" y="310" xml:space="preserve">JJJJJJJJJJJJ5#@@@&amp;#BBBBG??????????????</text>
-    <text class="art" x="30" y="324" xml:space="preserve">55555555YYYYYYB@@&amp;&amp;G55PJYYYYYYYYYYYYYY</text>
-    <text class="art" x="30" y="338" xml:space="preserve">55Y5YYYYYY5YYYYG&amp;&amp;&amp;BYY5YYYYYYYYJYYJJYY</text>
-    <text class="art" x="30" y="352" xml:space="preserve">555Y55YYYY555YYYYYP#Y?Y55P555PP5P5YYYY</text>
-    <text class="art" x="30" y="366" xml:space="preserve">YYYYYJJJJJJJJJJJJ7!?Y?Y?????JJJJJJJ??J</text>
-    <text class="art" x="30" y="380" xml:space="preserve">55Y555555YYY5P5J?7~^^!?Y55PPPPPJ7!7!7!</text>
-    <text class="art" x="30" y="394" xml:space="preserve">55555YY55555PG5?7~:^::^~5GGBBBBP5J?!!7</text>
-    <text class="art" x="30" y="408" xml:space="preserve">YYYJJJJJJJJJJYJ?7!:^~.^^^YYY555YYJJ??J</text>
-    <text class="art" x="30" y="422" xml:space="preserve">JJJJ?JJYYYJJ?JJ?7!^.^.^~^J?JJJJ???7?J?</text>
-    <text class="art" x="30" y="436" xml:space="preserve">?J?J7777JJYY?JJ??~~....^^777!7777777?!</text>
-    <text class="art" x="30" y="450" xml:space="preserve">?JJ?JJJ?77YJJJJ??7!:....:!~~~!!7!!7?77</text>
-    <text class="art" x="30" y="464" xml:space="preserve">JYYJYYYY??YYYJJ???~^:....?JYJJJJ??JYYY</text>
-    <text class="art" x="30" y="478" xml:space="preserve">YYYYYYYYYJYYYJJ7Y7~^:.:..!Y555555Y5YY5</text>
-    <text class="art" x="30" y="492" xml:space="preserve">5PPPPPPPP55YYYY?Y7~:.:^..^5555555PPPPP</text>
-    <text class="art" x="30" y="506" xml:space="preserve">5PPPPP5PPPPYYPYYY7~::^~..:5Y5555555555</text>
-    <text class="art" x="30" y="520" xml:space="preserve">YYYYYYYYYYY5YPYYY7~^^:~...JYYYYYYYYYYY</text>
-    <text class="art" x="30" y="534" xml:space="preserve">YYYYYYYYYYYP5PYYY!~~::~...?JJJJJJJJJYJ</text>
-    <text class="art" x="30" y="548" xml:space="preserve">YYYYYYYYYYY5PP5YY!~!.^~::.7JJJJJJJJJJJ</text>
-    <text class="title" x="300" y="30">shubham@joey</text>
-    <text class="sep" x="300" y="46">──────────────────────────────────────────</text>
-    <text class="key" x="300" y="70">Name...........</text>
-    <text class="val" x="425" y="70">Shubham Panchal (Joey)</text>
-    <text class="key" x="300" y="87">Age............</text>
-    <text class="val" x="425" y="87">21y 29d</text>
-    <text class="key" x="300" y="104">Repos..........</text>
-    <text class="val" x="425" y="104">18</text>
-    <text class="key" x="300" y="121">Stars..........</text>
-    <text class="val" x="425" y="121">2</text>
-    <text class="key" x="300" y="138">LOC............</text>
-    <text class="val" x="425" y="138">0</text>
-    <text class="key" x="300" y="155">Contributed....</text>
-    <text class="val" x="425" y="155">18 repos</text>
-    <text class="key" x="300" y="172">Followers......</text>
-    <text class="val" x="425" y="172">4</text>
-    <text class="key" x="300" y="189">Following......</text>
-    <text class="val" x="425" y="189">5</text>
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="1520px" height="460px" font-size="16px">
+<style>
+@font-face {
+src: local('Consolas'), local('Consolas Bold');
+font-family: 'ConsolasFallback';
+font-display: swap;
+-webkit-size-adjust: 109%;
+size-adjust: 109%;
+}
+.key {fill: #ffa657;}
+.value {fill: #a5d6ff;}
+.addColor {fill: #3fb950;}
+.delColor {fill: #f85149;}
+.cc {fill: #616e7f;}
+text, tspan {white-space: pre;}
+</style>
+<rect width="1520px" height="460px" fill="#161b22" rx="15"/>
+<text x="10" y="16" fill="#c9d1d9" font-size="8px" class="ascii">
+<tspan x="10" y="16">!!!!!!!!!!!!!!!!!!!!!!!!!!~~~~!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="26">!!!!!!!!!!!!!!!!!!!!!!!!!!~~!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="36">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="46">!!!!!!!!!!!!!!!!!!!!!!!!!!~!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="56">!!!!!!!!!!!!!!!!!!!!!!!!!!!!~~~!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="66">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="76">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="86">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!~!!!!777~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="96">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!?5GB#B##BPY?!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="106">!!!!!!!!!!!!!!!!!!!!!!!!!!77?5B&amp;@@@@@&amp;&amp;##&amp;P!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="116">!!!!!!!!!!!!!!!!!!!!!!!!JG##&amp;@@@@@@@@@&amp;&amp;&amp;G?!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="126">!!!!!!!!!!!!!!!!!!!!!!Y#@@@@@@@@@@@@@@&amp;&amp;BPPPYJ7~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="136">!!!!!!!!!!!!!!!!!!!!!?#@@@@@@@@@@@@@@@@#GBBPYYJ?7!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="146">!!!!!!!!!!!!!!!!!!!7Y&amp;@@@@@@@@@@@@@@@&amp;#BB#PYY5GGGGY7~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="156">7!!!!!!!!!!!!!!!!!!Y#@@@@@@@@@@@@@&amp;&amp;@&amp;##BBP55YYJ5BPP7~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="166">777777!!!!!!!!!!777?5&amp;@@@@@@@@@@@@@@@@&amp;&amp;##BBGYJ?75GGJ!~~~!~~~~~~~~~~~~~~~~~~~~~~</tspan>
+<tspan x="10" y="176">777777777!!!!7777777J&amp;@@@@@@@@@@@&amp;###&amp;&amp;&amp;&amp;&amp;&amp;#BGP5YYYYJJ!~!!!!!!!!~~!!~~~~~~~~~~~~</tspan>
+<tspan x="10" y="186">77777777777777777777?5@@@@@@@@@@@#5P#&amp;##&amp;&amp;@&amp;&amp;&amp;#BGP55Y55J!!!!!!!!!!!!!!!!!!!!~~!!</tspan>
+<tspan x="10" y="196">7777777777777777777777Y#@@@@@@@@@@#BG##BB&amp;&amp;&amp;&amp;&amp;&amp;###&amp;&amp;&amp;&amp;#5!!!!!!!!!!!!!!!!!!!!!!!!</tspan>
+<tspan x="10" y="206">777777777777777777777777YB@@@@@@@@@&amp;###BB&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@&amp;#PJ7!!!!!!!!!!!!!!!!!!!!!!!!!</tspan>
+<tspan x="10" y="216">JJJJJJJJJJJJJJJJJJJJJJJJJJ5G#&amp;@@@@@@&amp;&amp;##BBBBBB#BGG5?????????????????????????????</tspan>
+<tspan x="10" y="226">55555555555555555YYYYYYYYYYYY5B@@@@@&amp;&amp;&amp;#BG5555GPYJJYYYYYYYYYYYYYYYYYYYYYYYYYYYYY</tspan>
+<tspan x="10" y="236">5555YY55YYYYYYYYYYYYYY55YYYYYYY5G#&amp;&amp;&amp;&amp;&amp;&amp;#BPYJY55YYYYYYYYYYYYYYYYYJJYYJYYJJJYYYYY</tspan>
+<tspan x="10" y="246">5555555YY5555YYYYYYYY5555555YYYYYYYYY5PB##GY??YYJ555PP55555555PPP55PPP55YYYYYYYY</tspan>
+<tspan x="10" y="256">YYYYYYYYYYJJJJJJJJJJJJJJJJJJJJJJJYJJ77!!!?JYJ?JYJ???????????JJJJJ?JJJJJJJ????JJJ</tspan>
+<tspan x="10" y="266">5555YYY5555555Y5555YYYY5Y555P55JJJ??7!~^^^^^~!???Y5555PP5PPPPPPPPYJ?77!!7!!77!!!</tspan>
+<tspan x="10" y="276">55555555555Y5YY5555555555PPGGG5J??7!~^:^^^::::^^:~J5GGGGGBBBBBBBBGP55YJ??7!7!!77</tspan>
+<tspan x="10" y="286">YYYYYYJJJJJJJJJJJJJJJJJJJJJJYJJ???77!~:::^~~:.:^^^^^JYYYYYYY55555YYYYJJJJJ????JJ</tspan>
+<tspan x="10" y="296">?JJJJJJJ??JJJJYYYYYYYJJJJJ?JJJJ???7!!!^::..^^..^~~^^?JJ??JJJJJJJJ??????777??JJ??</tspan>
+<tspan x="10" y="306">???J7?JJ?7777777?JJJJJY5YJ?JJJJJ???!~!~::........^~^^7777777!7777777777!7777?7!7</tspan>
+<tspan x="10" y="316">???JJJ??JJYJJJJ??7777JYYJJJJJJJ?J?!77!~^:........:::!7~!~~~~!!!!!77!!!77???7!77</tspan>
+<tspan x="10" y="326">YJYYYYJJYY5YYYYYJ????JYYYYYJJJJJ?7?!?!~~^^::..:.....:?YJYYYYJ?JJJYJ?????JYY5YYYJ</tspan>
+<tspan x="10" y="336">YYYYYYYYYYYYYYYYYYYYJJYYYYYJJYJ?7?Y77!~~^^:::.^:....:!YY55PP5555555555YY5YYYYY55</tspan>
+<tspan x="10" y="346">55PPPPPPPPPPPPPPPPP55555YYYJY5Y??JY77!~~^::.^:.^.....^Y555555555555P55PPP5PPPPPP</tspan>
+<tspan x="10" y="356">P5PPPPPPPPPP555PPPPPPPP5YYY5P5YJYYY?7!~^^::::^.~:....:75YYY555555555555555555555</tspan>
+<tspan x="10" y="366">YYYYYYYYYYYYYYYYYYYYYYYY5YYPPYYYYYYJ77~^^^.^::^~:.....^JJYYYYYYYYYYYYYYYYYYYYYYY</tspan>
+<tspan x="10" y="376">YYYYYYYYYYYYYYYYYYYYYYYYPP5PP5YYYYYY!!~^^~::^:^~^.:...^?JJJJJJJJJJJJJJJJJJJYYJJY</tspan>
+<tspan x="10" y="386">YYYYYYYYYYYYYYYYYYYYYYY55PPPP555YYYY!!~^^!^.^^^~::::..^7JJJJJJJJJJJJJJJJJJJJJJJJ</tspan>
+</text>
+<text x="450" y="18" fill="#c9d1d9" font-size="12px">
+<tspan x="450" y="18">shubham@Joey-1123</tspan> ────────────────────────────────────────────────────────────
+<tspan x="450" y="34" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ....................................................... </tspan><tspan class="value">Arch Linux, Windows 11, Android 16</tspan>
+<tspan x="450" y="50" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc" id="age_data_dots"> ................................................. </tspan><tspan class="value" id="age_data">0 years, 0 months, 0 days</tspan>
+<tspan x="450" y="66" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ....................................................... </tspan><tspan class="value">Self-employed / Student</tspan>
+<tspan x="450" y="82" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ..................................................... </tspan><tspan class="value">Developer / Student</tspan>
+<tspan x="450" y="98" class="cc">. </tspan><tspan class="key">Editor</tspan>:<tspan class="cc"> ..................................................... </tspan><tspan class="value">VSCode, Neovim, Jupyter Notebook, NANO</tspan>
+<tspan x="450" y="114" class="cc">. </tspan><tspan class="key">Terminal</tspan>:<tspan class="cc"> ................................................... </tspan><tspan class="value">KITTY</tspan>
+<tspan x="450" y="130" class="cc">. </tspan><tspan class="key">Shell</tspan>:<tspan class="cc"> ...................................................... </tspan><tspan class="value">bash</tspan>
+<tspan x="450" y="154" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">PYTHON, JS, NODE.JS, C++, CUDA (LEARNING)</tspan>
+<tspan x="450" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ................................... </tspan><tspan class="value">HTML, CSS, JSON, YAML, SQL</tspan>
+<tspan x="450" y="186" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="cc"> .......................................... </tspan><tspan class="value">ENGLISH, HINDI, MARATHI, JAPANESE (N5) LEARNING</tspan>
+<tspan x="450" y="210" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Coding</tspan>:<tspan class="cc"> ........................................ </tspan><tspan class="value">Web Dev, Automation, CLI tools</tspan>
+<tspan x="450" y="226" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Hardware</tspan>:<tspan class="cc"> ...................................... </tspan><tspan class="value">HARDWARE OPTIMIZATION, OVERCLOCKING, UNDERCLOCKING, CPU STRESS TESTING, PC BUILDING</tspan>
+<tspan x="450" y="258">─ Contact</tspan> ─────────────────────────────────────────────────────────────────────
+<tspan x="450" y="274" class="cc">. </tspan><tspan class="key">Email</tspan>:<tspan class="cc"> ..................................................... </tspan><tspan class="value">shubhampanchal9168@gmail.com</tspan>
+<tspan x="450" y="290" class="cc">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="cc"> ................................................... </tspan><tspan class="value">Joey-1123</tspan>
+<tspan x="450" y="322">─ GitHub Stats</tspan> ──────────────────────────────────────────────────────────────
+<tspan x="450" y="338" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc" id="repo_data_dots"> ........ </tspan><tspan class="value" id="repo_data">0</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value" id="contrib_data">0</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="cc" id="star_data_dots"> ................... </tspan><tspan class="value" id="star_data">0</tspan>
+<tspan x="450" y="354" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc" id="commit_data_dots"> ......................... </tspan><tspan class="value" id="commit_data">0</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc" id="follower_data_dots"> ........... </tspan><tspan class="value" id="follower_data">0</tspan>
+<tspan x="450" y="370" class="cc">. </tspan><tspan class="key">Lines of Code on GitHub</tspan>:<tspan class="cc" id="loc_data_dots"> ....... </tspan><tspan class="value" id="loc_data">0</tspan> ( <tspan class="addColor" id="loc_add">0</tspan><tspan class="addColor">++</tspan>, <tspan id="loc_del_dots"> </tspan><tspan class="delColor" id="loc_del">0</tspan><tspan class="delColor">--</tspan> )
+</text>
 </svg>
