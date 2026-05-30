@@ -2,6 +2,7 @@ import os
 import json
 import hashlib
 import datetime
+import time
 import requests
 from dateutil.relativedelta import relativedelta
 from pathlib import Path
@@ -117,6 +118,25 @@ def get_contrib_count():
     return data["data"]["user"]["repositories"]["totalCount"]
 
 
+def fetch_repo_loc(repo_full_name):
+    owner, repo = repo_full_name.split("/")
+    url = f"https://api.github.com/repos/{owner}/{repo}/stats/code_frequency"
+    for attempt in range(3):
+        resp = requests.get(url, headers=HEADERS)
+        if resp.status_code == 202:
+            time.sleep(3)
+            continue
+        if resp.status_code != 200:
+            return 0, 0
+        additions = 0
+        deletions = 0
+        for week in resp.json():
+            additions += week[1]
+            deletions += week[2]
+        return additions, deletions
+    return 0, 0
+
+
 def get_loc_data(repo_nodes):
     cache = {}
     if os.path.exists(CACHE_PATH):
@@ -126,7 +146,7 @@ def get_loc_data(repo_nodes):
     total_additions = 0
     total_deletions = 0
 
-    for node in repo_nodes:
+    for i, node in enumerate(repo_nodes):
         name = node["name"]
         commits = node["commits"]
         if commits == 0:
@@ -138,6 +158,9 @@ def get_loc_data(repo_nodes):
             total_deletions += cached.get("deletions", 0)
             continue
 
+        if i > 0 and i % 5 == 0:
+            time.sleep(1)
+
         additions, deletions = fetch_repo_loc(name)
         cache[name] = {
             "commits": commits,
@@ -146,55 +169,13 @@ def get_loc_data(repo_nodes):
         }
         total_additions += additions
         total_deletions += deletions
-        print(f"  -> {name}: +{additions} / -{deletions}")
+        print(f"  -> {name}: +{additions:,} / -{deletions:,}")
 
     os.makedirs("cache", exist_ok=True)
     with open(CACHE_PATH, "w") as f:
         json.dump(cache, f, indent=2)
 
     return total_additions, total_deletions, total_additions - total_deletions
-
-
-def fetch_repo_loc(repo_full_name):
-    owner, repo = repo_full_name.split("/")
-    query = """
-    query($owner: String!, $repo: String!, $cursor: String) {
-        repository(name: $repo, owner: $owner) {
-            defaultBranchRef {
-                target { ... on Commit { history(first: 100, after: $cursor) {
-                    totalCount
-                    edges { node { additions deletions } }
-                    pageInfo { endCursor hasNextPage }
-                }}}
-            }
-        }
-    }"""
-
-    additions = 0
-    deletions = 0
-    cursor = None
-
-    while True:
-        data = graphql_query(query, {"owner": owner, "repo": repo, "cursor": cursor})
-        history = (
-            data.get("data", {})
-            .get("repository", {})
-            .get("defaultBranchRef", {})
-            .get("target", {})
-            .get("history", {})
-        )
-        if not history or not history.get("edges"):
-            break
-        for edge in history["edges"]:
-            if edge and edge.get("node"):
-                additions += edge["node"].get("additions", 0)
-                deletions += edge["node"].get("deletions", 0)
-        if history["pageInfo"]["hasNextPage"]:
-            cursor = history["pageInfo"]["endCursor"]
-        else:
-            break
-
-    return additions, deletions
 
 
 def calculate_age():
