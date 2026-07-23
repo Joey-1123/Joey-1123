@@ -7,13 +7,14 @@ import os
 import json
 import datetime
 import time
+import xml.etree.ElementTree as etree
 import requests
-from dateutil.relativedelta import relativedelta
-from lxml import etree
 
 USERNAME = "Joey-1123"
 BIRTHDAY = datetime.date(2005, 5, 1)
 CACHE_PATH = "cache/loc_cache.json"
+# only these repos count for commits/LOC; empty = all owned repos count
+INCLUDED_REPOS: set[str] = {"Joey-1123/FlickerX", "Joey-1123/Vibe-Trading"}
 
 GITHUB_GRAPHQL = "https://api.github.com/graphql"
 
@@ -29,10 +30,14 @@ def graphql_query(query, variables=None):
         GITHUB_GRAPHQL,
         json={"query": query, "variables": variables or {}},
         headers=HEADERS,
+        timeout=30,
     )
     if resp.status_code != 200:
         raise Exception(f"GraphQL query failed: {resp.status_code} {resp.text}")
-    return resp.json()
+    data = resp.json()
+    if "errors" in data:
+        raise Exception(f"GraphQL errors: {data['errors']}")
+    return data
 
 
 def get_user_stats():
@@ -63,6 +68,7 @@ def get_repo_stats():
                 edges {
                     node {
                         nameWithOwner
+                        isFork
                         stargazers { totalCount }
                         defaultBranchRef {
                             target { ... on Commit { history { totalCount } } }
@@ -79,7 +85,8 @@ def get_repo_stats():
     while True:
         data = graphql_query(query, {"login": USERNAME, "cursor": cursor})
         repos_data = data["data"]["user"]["repositories"]
-        repos["count"] = repos_data["totalCount"]
+        if repos["count"] == 0:
+            repos["count"] = repos_data["totalCount"]
         for edge in repos_data["edges"]:
             node = edge["node"]
             repos["stars"] += node["stargazers"]["totalCount"]
@@ -89,6 +96,7 @@ def get_repo_stats():
             repos["nodes"].append({
                 "name": node["nameWithOwner"],
                 "commits": commit_count,
+                "isFork": node["isFork"],
             })
         if repos_data["pageInfo"]["hasNextPage"]:
             cursor = repos_data["pageInfo"]["endCursor"]
@@ -99,34 +107,36 @@ def get_repo_stats():
 
 def get_contrib_count():
     query = """
-    query($login: String!, $cursor: String) {
+    query($login: String!) {
         user(login: $login) {
-            repositories(first: 100, after: $cursor, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER]) {
+            repositories(first: 100, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER]) {
                 totalCount
-                pageInfo { endCursor hasNextPage }
             }
         }
     }"""
-    data = graphql_query(query, {"login": USERNAME, "cursor": None})
+    data = graphql_query(query, {"login": USERNAME})
     return data["data"]["user"]["repositories"]["totalCount"]
-
-
-def get_total_commits(repo_nodes):
-    return sum(node["commits"] for node in repo_nodes)
 
 
 def fetch_repo_loc(repo_full_name):
     owner, repo = repo_full_name.split("/")
     url = f"https://api.github.com/repos/{owner}/{repo}/stats/code_frequency"
     for attempt in range(3):
-        resp = requests.get(url, headers=HEADERS)
-        if resp.status_code == 202:
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=30)
+        except requests.exceptions.RequestException:
+            time.sleep(3)
+            continue
+        if resp.status_code in (202, 429):
             time.sleep(3)
             continue
         if resp.status_code != 200:
             return 0, 0
+        data = resp.json()
+        if not isinstance(data, list):
+            return 0, 0
         additions = deletions = 0
-        for week in resp.json():
+        for week in data:
             additions += week[1]
             deletions += week[2]
         return additions, deletions
@@ -138,6 +148,8 @@ def get_loc_data(repo_nodes):
     if os.path.exists(CACHE_PATH):
         with open(CACHE_PATH) as f:
             cache = json.load(f)
+
+    os.makedirs("cache", exist_ok=True)
 
     total_additions = total_deletions = 0
 
@@ -162,7 +174,6 @@ def get_loc_data(repo_nodes):
         total_deletions += deletions
         print(f"  -> {name}: +{additions:,} / -{deletions:,}")
 
-    os.makedirs("cache", exist_ok=True)
     with open(CACHE_PATH, "w") as f:
         json.dump(cache, f, indent=2)
 
@@ -171,15 +182,25 @@ def get_loc_data(repo_nodes):
 
 def calculate_age():
     today = datetime.date.today()
-    diff = relativedelta(today, BIRTHDAY)
+    years = today.year - BIRTHDAY.year
+    months = today.month - BIRTHDAY.month
+    days = today.day - BIRTHDAY.day
+    if days < 0:
+        months -= 1
+        prev = today.month - 1 or 12
+        y = today.year if prev != 12 else today.year - 1
+        days += (datetime.date(y, prev + 1, 1) - datetime.date(y, prev, 1)).days
+    if months < 0:
+        years -= 1
+        months += 12
     parts = []
-    if diff.years:
-        parts.append(f"{diff.years} year{'s' if diff.years != 1 else ''}")
-    if diff.months:
-        parts.append(f"{diff.months} month{'s' if diff.months != 1 else ''}")
-    if diff.days:
-        parts.append(f"{diff.days} day{'s' if diff.days != 1 else ''}")
-    is_birthday = diff.months == 0 and diff.days == 0
+    if years:
+        parts.append(f"{years} year{'s' if years != 1 else ''}")
+    if months:
+        parts.append(f"{months} month{'s' if months != 1 else ''}")
+    if days:
+        parts.append(f"{days} day{'s' if days != 1 else ''}")
+    is_birthday = months == 0 and days == 0
     return ", ".join(parts) if parts else "0 days", is_birthday
 
 
@@ -198,6 +219,8 @@ def update_svg(filename, stats):
         el = root.find(f".//svg:*[@id='{elem_id}']", ns)
         if el is not None:
             el.text = str(text)
+        else:
+            print(f"  Warning: element #{elem_id} not found in {filename}")
 
     set_text("age_data", stats["age_display"])
     set_text("repo_data", str(stats["repos"]))
@@ -223,11 +246,13 @@ def main():
     print("Fetching contribution count...")
     contributed = get_contrib_count()
 
+    own_nodes = [n for n in repos["nodes"] if not n["isFork"] or n["name"] in INCLUDED_REPOS]
+
     print("Counting commits...")
-    total_commits = get_total_commits(repos["nodes"])
+    total_commits = sum(n["commits"] for n in own_nodes)
 
     print("Calculating LOC...")
-    additions, deletions, net_loc = get_loc_data(repos["nodes"])
+    additions, deletions, net_loc = get_loc_data(own_nodes)
     print(f"  -> +{additions:,} / -{deletions:,} = {format_loc(net_loc)} net")
 
     print("Calculating age...")

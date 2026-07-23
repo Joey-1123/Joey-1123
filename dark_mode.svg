@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!-- Originally created by Joey-1123 (https://github.com/Joey-1123) --><!-- Inspired by Andrew6rant (https://github.com/Andrew6rant/Andrew6rant) --><svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="1520px" height="460px" font-size="16px">
+<!-- Originally created by Joey-1123 (https://github.com/Joey-1123) --><!-- Inspired by Andrew6rant (https://github.com/Andrew6rant/Andrew6rant) --><svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="1800px" height="520px" font-size="16px">
 <style>
 @font-face {
 src: local('Consolas'), local('Consolas Bold');
@@ -15,7 +15,7 @@ size-adjust: 109%;
 .cc {fill: #616e7f;}
 text, tspan {white-space: pre;}
 </style>
-<rect width="1520px" height="460px" fill="#161b22" rx="15"/>
+<rect width="1800px" height="520px" fill="#161b22" rx="15"/>
 <text x="10" y="16" fill="#c9d1d9" font-size="8px" class="ascii">
 <tspan x="10" y="16">!!!!!!!!!!!!!!!!!!!!!!!!!!~~~~!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
 <tspan x="10" y="26">!!!!!!!!!!!!!!!!!!!!!!!!!!~~!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
