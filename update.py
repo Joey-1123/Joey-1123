@@ -300,12 +300,14 @@ def get_contrib_count():
     return data["data"]["user"]["repositories"]["totalCount"]
 
 
-def _sleep_for_response(resp, attempt):
-    wait = 2 * (attempt + 1)
+def _sleep_for_response(resp, attempt, base=3, cap=9):
+    """Capped backoff honoring Retry-After. Stats endpoints (202 = computing)
+    are best-effort: callers give up after a few tries and use fallbacks."""
+    wait = min(base * (attempt + 1), cap)
     try:
         ra = resp.headers.get("Retry-After")
         if ra:
-            wait = max(wait, int(float(ra)))
+            wait = max(wait, min(int(float(ra)), cap))
     except (ValueError, TypeError):
         pass
     time.sleep(wait)
@@ -315,11 +317,11 @@ def fetch_repo_loc(repo_full_name):
     """Repo-wide additions/deletions (all contributors). See fetch_user_loc for per-user."""
     owner, repo = repo_full_name.split("/")
     url = f"https://api.github.com/repos/{owner}/{repo}/stats/code_frequency"
-    for attempt in range(4):
+    for attempt in range(3):
         try:
             resp = requests.get(url, headers=HEADERS, timeout=30)
         except requests.exceptions.RequestException:
-            time.sleep(2 * (attempt + 1))
+            time.sleep(3)
             continue
         if resp.status_code in (202, 429, 502, 503):
             _sleep_for_response(resp, attempt)
@@ -339,17 +341,21 @@ def fetch_repo_loc(repo_full_name):
 
 
 def fetch_user_loc(repo_full_name, username=USERNAME):
-    """Per-user additions/deletions via /stats/contributors. Falls back to (None, None)."""
+    """Per-user additions/deletions via /stats/contributors. Falls back to (None, None).
+
+    Best-effort: 2 attempts max, then the caller uses repo-wide numbers.
+    (The contributors endpoint often returns 202 while GitHub computes stats;
+    waiting it out costs ~20s/repo and stalls the whole Action run.)"""
     owner, repo = repo_full_name.split("/")
     url = f"https://api.github.com/repos/{owner}/{repo}/stats/contributors"
-    for attempt in range(4):
+    for attempt in range(2):
         try:
             resp = requests.get(url, headers=HEADERS, timeout=30)
         except requests.exceptions.RequestException:
-            time.sleep(2 * (attempt + 1))
+            time.sleep(3)
             continue
         if resp.status_code in (202, 429, 502, 503):
-            _sleep_for_response(resp, attempt)
+            _sleep_for_response(resp, attempt, base=3, cap=6)
             continue
         if resp.status_code != 200:
             return None, None

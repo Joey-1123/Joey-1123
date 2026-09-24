@@ -187,3 +187,30 @@ def test_streaks_from_days():
     # all zero
     assert u.streaks_from_days([(d, 0) for d, _ in days], today=t) == (0, 0)
     assert u.streaks_from_days([], today=t) == (0, 0)
+
+
+class _Resp:
+    def __init__(self, status):
+        self.status_code = status
+        self.headers = {}
+
+    def json(self):
+        return []
+
+
+def test_stats_endpoints_give_up_fast(monkeypatch):
+    """GitHub stats endpoints return 202 while computing; we must not stall the run."""
+    import requests as rq
+    calls = {"n": 0, "slept": 0}
+
+    def fake_get(*a, **k):
+        calls["n"] += 1
+        return _Resp(202)
+
+    monkeypatch.setattr(rq, "get", fake_get)
+    monkeypatch.setattr(u.time, "sleep", lambda s: calls.__setitem__("slept", calls["slept"] + s))
+    assert u.fetch_user_loc("Joey-1123/x") == (None, None)
+    assert calls["n"] <= 2, f"user LOC took {calls['n']} attempts"
+    calls["n"] = 0
+    assert u.fetch_repo_loc("Joey-1123/x") == (0, 0)
+    assert calls["n"] <= 3, f"repo LOC took {calls['n']} attempts"
