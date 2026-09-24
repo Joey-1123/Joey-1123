@@ -567,6 +567,8 @@ def main(argv=None):
     print("Aggregating top languages (scoped repos)...")
     shares = language_shares(scoped_nodes)
     lang_display = " · ".join(f"{n} {p}%" for n, p in shares) if shares else "—"
+    while len(lang_display) > 40 and " · " in lang_display:
+        lang_display = lang_display.rsplit(" · ", 1)[0]
     print(f"  -> {lang_display}")
 
     print("Ranking top repos (scoped, by stars)...")

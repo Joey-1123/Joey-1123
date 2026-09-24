@@ -42,6 +42,37 @@ def test_load_cache_corrupt(tmp_path, monkeypatch):
     assert u.load_cache() == {}
 
 
+def test_card_layout_fits_and_aligns():
+    """Restyle lock: every info row fits the canvas and values share one column."""
+    import re
+    import xml.etree.ElementTree as ET
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    for theme in ["light_mode.svg", "dark_mode.svg"]:
+        t = ET.parse(os.path.join(base, theme))
+        r = t.getroot()
+        ns = {"svg": "http://www.w3.org/2000/svg"}
+        assert r.attrib["width"] == u.CARD_WIDTH
+        info = [e for e in r.findall("svg:text", ns) if e.get("x") == "390"][0]
+        rows, cur, starts = [], [], set()
+        for child in list(info):
+            if child.get("y") is not None and cur:
+                rows.append(cur)
+                cur = []
+            cur.append(child)
+        if cur:
+            rows.append(cur)
+        for row in rows:
+            full = re.sub(r"\s+", " ", "".join(
+                "".join((c.text or "") + (c.tail or "")) for c in row)).strip()
+            if not full:
+                continue
+            assert 390 + len(full) * 7.22 <= 985, f"{theme} row overflows: {full[:60]}"
+            m = re.search(r"\.{3,}", full)
+            if m and not full.startswith("─"):
+                starts.add(full.index(m.group(0)) + len(m.group(0)) + 1)
+        assert len(starts) == 1, f"{theme} value columns not uniform: {sorted(starts)}"
+
+
 def test_update_svg_roundtrip_keeps_values_and_width():
     for theme in ["light_mode.svg", "dark_mode.svg"]:
         src = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), theme)
@@ -109,6 +140,17 @@ def test_language_shares():
     assert 99 <= total <= 101  # rounding tolerance
     assert u.language_shares([]) == []
     assert u.language_shares([{"name": "x", "languages": []}]) == []
+
+
+def test_lang_display_cap():
+    # many languages must collapse to fit the card's value column (<=40 chars)
+    nodes = [{"name": f"r{i}", "languages": [(f"Lang{i}", 100 - i * 5)]} for i in range(10)]
+    shares = u.language_shares(nodes, top_n=10)
+    display = " · ".join(f"{n} {p}%" for n, p in shares)
+    while len(display) > 40 and " · " in display:
+        display = display.rsplit(" · ", 1)[0]
+    assert len(display) <= 40
+    assert "·" in display  # still multiple items, dropped whole items only
 
 
 def test_top_repos():
