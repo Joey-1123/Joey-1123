@@ -53,7 +53,11 @@ def test_update_svg_roundtrip_keeps_values_and_width():
             t = ET.parse(dst)
             r = t.getroot()
             ns = {"svg": "http://www.w3.org/2000/svg"}
-            assert r.attrib.get("width") == "985px", f"{theme} width must be 985px"
+            assert r.attrib.get("width") == u.CARD_WIDTH, f"{theme} width"
+            assert r.attrib.get("height") == u.CARD_HEIGHT, f"{theme} height"
+            assert r.attrib.get("role") == "img", f"{theme} a11y role"
+            assert r.find("svg:title", ns) is not None, f"{theme} a11y title"
+            assert r.find("svg:desc", ns) is not None, f"{theme} a11y desc"
 
             def g(i):
                 el = r.find(f".//svg:*[@id='{i}']", ns)

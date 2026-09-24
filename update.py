@@ -16,6 +16,9 @@ etree.register_namespace("", "http://www.w3.org/2000/svg")
 USERNAME = os.environ.get("PROFILE_USERNAME", "Joey-1123")
 BIRTHDAY = datetime.date(2005, 5, 1)
 CACHE_PATH = "cache/loc_cache.json"
+# Card canvas both themes must match these (asserted by tests/test_update.py)
+CARD_WIDTH = "985px"
+CARD_HEIGHT = "552px"
 # Scope: all non-fork owned repos are counted, plus these forks.
 # (Previous comment claimed this was an allowlist; it is a fork-allowlist.)
 INCLUDED_FORKS: set[str] = {"Joey-1123/FlickerX", "Joey-1123/Vibe-Trading"}
