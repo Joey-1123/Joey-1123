@@ -30,7 +30,8 @@ Test on this branch via `workflow_dispatch`; merge to `main` when satisfied.
 - Verify: markdown renders, workflow YAML valid (`python -c yaml` if available, else visual).
 
 ## Merge checklist
-- [ ] pytest green on branch
+- [x] pytest green on branch (11 tests)
 - [ ] `workflow_dispatch` run of Update Profile Stats on this branch is green
+- [ ] `workflow_dispatch` run of Generate contribution snake on this branch is green
 - [ ] Card renders correctly at 896px in light + dark
 - [ ] Squash or merge `feat/profile-improvements` into `main`
