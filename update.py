@@ -188,6 +188,73 @@ def aggregate_languages(nodes, top_n=4):
     return [name for name, _ in language_shares(nodes, top_n)]
 
 
+def streaks_from_days(days, today=None):
+    """(current, longest) streaks from sorted [(date_iso, count)]. Pure function.
+
+    Current streak counts back from today; if today is empty it starts at
+    yesterday (standard streak behavior).
+    """
+    today = today or datetime.date.today()
+    by_date = {d: c for d, c in days}
+    if not by_date:
+        return 0, 0
+    first = min(by_date)
+    # longest
+    longest = run = 0
+    for d in sorted(by_date):
+        if by_date[d] > 0:
+            run += 1
+            longest = max(longest, run)
+        else:
+            run = 0
+    # current: walk back from today (or yesterday if today empty)
+    cur = today
+    if by_date.get(cur.isoformat(), 0) == 0:
+        cur -= datetime.timedelta(days=1)
+    current = 0
+    while by_date.get(cur.isoformat(), 0) > 0:
+        current += 1
+        cur -= datetime.timedelta(days=1)
+    return current, longest
+
+
+def get_streak():
+    """(current, longest, year_total) over all contribution years. Falls back to (None,)*3."""
+    years_q = """
+    query($login: String!) {
+        user(login: $login) {
+            contributionsCollection { contributionYears }
+        }
+    }"""
+    years = graphql_query(years_q, {"login": USERNAME})["data"]["user"][
+        "contributionsCollection"]["contributionYears"]
+    cal_q = """
+    query($login: String!, $from: DateTime!, $to: DateTime!) {
+        user(login: $login) {
+            contributionsCollection(from: $from, to: $to) {
+                contributionCalendar {
+                    totalContributions
+                    weeks { contributionDays { date contributionCount } }
+                }
+            }
+        }
+    }"""
+    days: dict[str, int] = {}
+    total = 0
+    for y in sorted(years):
+        data = graphql_query(cal_q, {
+            "login": USERNAME,
+            "from": f"{y}-01-01T00:00:00Z",
+            "to": f"{y}-12-31T23:59:59Z",
+        })["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+        total += data.get("totalContributions", 0)
+        for w in data.get("weeks", []):
+            for d in w.get("contributionDays", []):
+                days[d["date"]] = days.get(d["date"], 0) + d["contributionCount"]
+    cur, best = streaks_from_days(sorted(days.items()))
+    return cur, best, total
+
+
 def get_contributions():
     """User-authored activity (default: last year per GitHub API)."""
     query = """
@@ -422,6 +489,8 @@ def update_svg(filename, stats):
     set_text("pr_data", str(stats.get("prs", "?")))
     set_text("issue_data", str(stats.get("issues", "?")))
     set_text("lang_data", str(stats.get("top_langs", "—")))
+    set_text("streak_data", str(stats.get("streak", "?")))
+    set_text("streak_total", str(stats.get("streak_total", "?")))
     for i in range(1, 6):
         rows = stats.get("top_repos", [])
         set_text(f"top{i}", rows[i - 1] if i <= len(rows) else "—")
@@ -465,6 +534,16 @@ def main(argv=None):
     scoped_stars = sum(n["stars"] for n in scoped_nodes)
     print(f"  -> {repos['count']} owned repos, {len(scoped_nodes)} in scope, {scoped_stars} stars (scoped)")
 
+    print("Fetching contribution streak...")
+    try:
+        streak_cur, streak_best, streak_total = get_streak()
+        streak_display = f"{streak_cur}d (best {streak_best}d)"
+        print(f"  -> streak {streak_display}, {streak_total} total")
+    except Exception as e:
+        print(f"  Warning: streak fetch failed ({e})")
+        streak_cur = streak_best = streak_total = None
+        streak_display = "?"
+
     print("Counting commits (default-branch lifetime, scoped repos)...")
     total_commits = sum(n["commits"] for n in scoped_nodes)
 
@@ -507,6 +586,8 @@ def main(argv=None):
         "contributed": contributed,
         "prs": contrib["prs"] if contrib else "?",
         "issues": contrib["issues"] if contrib else "?",
+        "streak": streak_display,
+        "streak_total": streak_total if streak_total is not None else "?",
         "top_langs": lang_display,
         "top_repos": top_display,
         "followers": user["followers"],

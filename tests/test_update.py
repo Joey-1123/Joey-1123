@@ -66,6 +66,7 @@ def test_update_svg_roundtrip_keeps_values_and_width():
                 "commits": g("commit_data"), "followers": g("follower_data"),
                 "prs": "12", "issues": "5", "top_langs": "Python 42%",
                 "top_repos": ["1. a ★12 · Python", "—", "—", "—", "—"],
+                "streak": "3d (best 5d)", "streak_total": 1234,
                 "loc": g("loc_data"),
                 "loc_add": int(g("loc_add").replace(",", "")),
                 "loc_del": int(g("loc_del").replace(",", "").lstrip("-")),
@@ -75,7 +76,8 @@ def test_update_svg_roundtrip_keeps_values_and_width():
             assert "ns0:" not in out
             assert 'width="985px"' in out
             for v in [stats["repos"], stats["stars"], stats["commits"],
-                      "12", "5", "Python 42%", "1. a ★12 · Python"]:
+                      "12", "5", "Python 42%", "1. a ★12 · Python",
+                      "3d (best 5d)", "1234"]:
                 assert str(v) in out
         finally:
             os.unlink(dst)
@@ -121,3 +123,21 @@ def test_top_repos():
 
 def test_format_top_repo():
     assert u.format_top_repo(1, {"name": "a", "stars": 12, "lang": "Python"}) == "1. a ★12 · Python"
+
+
+def test_streaks_from_days():
+    import datetime
+    t = datetime.date(2026, 9, 25)
+    mk = lambda d, c: (d.isoformat(), c)
+    # 3-day streak ending today, best 5 earlier
+    days = [mk(datetime.date(2026, 9, d), 1) for d in (10, 11, 12, 13, 14)]
+    days += [mk(datetime.date(2026, 9, d), 0) for d in (15, 16)]
+    days += [mk(datetime.date(2026, 9, d), 2) for d in (23, 24, 25)]
+    cur, best = u.streaks_from_days(days, today=t)
+    assert (cur, best) == (3, 5)
+    # today empty -> streak counts through yesterday
+    cur2, _ = u.streaks_from_days(days[:-1], today=t)
+    assert cur2 == 2
+    # all zero
+    assert u.streaks_from_days([(d, 0) for d, _ in days], today=t) == (0, 0)
+    assert u.streaks_from_days([], today=t) == (0, 0)

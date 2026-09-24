@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="520px" font-size="16px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="552px" font-size="16px">
 <style>
 @font-face {
 src: local('Consolas'), local('Consolas Bold');
@@ -15,7 +15,7 @@ size-adjust: 109%;
 .cc {fill: #656d76;}
 text, tspan {white-space: pre;}
 </style>
-<rect width="985px" height="520px" fill="#ffffff" rx="15" />
+<rect width="985px" height="552px" fill="#ffffff" rx="15" />
 <text x="10" y="16" fill="#1f2328" font-size="8px" class="ascii">
 <tspan x="10" y="16">!!!!!!!!!!!!!!!!!!!!!!!!!!~~~~!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
 <tspan x="10" y="26">!!!!!!!!!!!!!!!!!!!!!!!!!!~~!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</tspan>
@@ -85,5 +85,7 @@ text, tspan {white-space: pre;}
 <tspan x="390" y="466" class="cc">. </tspan><tspan class="value" id="top3">—</tspan>
 <tspan x="390" y="482" class="cc">. </tspan><tspan class="value" id="top4">—</tspan>
 <tspan x="390" y="498" class="cc">. </tspan><tspan class="value" id="top5">—</tspan>
+<tspan x="390" y="514">─ Activity</tspan> ──────────────────────────────────────
+<tspan x="390" y="530" class="cc">. </tspan><tspan class="key">Streak</tspan>:<tspan class="cc"> .............................. </tspan><tspan class="value" id="streak_data">?</tspan> | <tspan class="key">Contribs</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value" id="streak_total">?</tspan>
 </text>
 </svg>
