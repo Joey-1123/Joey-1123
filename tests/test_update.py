@@ -89,3 +89,16 @@ def test_aggregate_languages():
     assert u.aggregate_languages(nodes) == ["Python", "JavaScript", "C++"]
     assert u.aggregate_languages(nodes, top_n=2) == ["Python", "JavaScript"]
     assert u.aggregate_languages([]) == []
+
+
+def test_language_shares():
+    nodes = [
+        {"name": "a", "languages": [("Python", 100), ("C++", 50)]},
+        {"name": "b", "languages": [("Python", 200), ("JavaScript", 300)]},
+    ]
+    shares = u.language_shares(nodes)
+    assert [n for n, _ in shares] == ["Python", "JavaScript", "C++"]
+    total = sum(p for _, p in shares)
+    assert 99 <= total <= 101  # rounding tolerance
+    assert u.language_shares([]) == []
+    assert u.language_shares([{"name": "x", "languages": []}]) == []

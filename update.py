@@ -151,14 +151,22 @@ def get_repo_stats():
     return repos
 
 
-def aggregate_languages(nodes, top_n=4):
-    """Size-weighted top languages across scoped repos. Pure function (testable)."""
+def language_shares(nodes, top_n=4):
+    """Size-weighted (name, percent) ranking across repos. Pure function."""
     totals: dict[str, int] = {}
     for n in nodes:
         for name, size in n.get("languages", []):
             totals[name] = totals.get(name, 0) + size
-    ranked = sorted(totals.items(), key=lambda kv: kv[1], reverse=True)
-    return [name for name, _ in ranked[:top_n]]
+    grand = sum(totals.values())
+    if grand <= 0:
+        return []
+    ranked = sorted(totals.items(), key=lambda kv: kv[1], reverse=True)[:top_n]
+    return [(name, round(100 * size / grand)) for name, size in ranked]
+
+
+def aggregate_languages(nodes, top_n=4):
+    """Size-weighted top language names. Pure function (testable)."""
+    return [name for name, _ in language_shares(nodes, top_n)]
 
 
 def get_contributions():
@@ -453,8 +461,8 @@ def main(argv=None):
         disp_add, disp_del, disp_net = additions, deletions, net_loc
 
     print("Aggregating top languages (scoped repos)...")
-    top_langs = aggregate_languages(scoped_nodes)
-    lang_display = ", ".join(top_langs) if top_langs else "—"
+    shares = language_shares(scoped_nodes)
+    lang_display = " · ".join(f"{n} {p}%" for n, p in shares) if shares else "—"
     print(f"  -> {lang_display}")
 
     print("Calculating age...")
