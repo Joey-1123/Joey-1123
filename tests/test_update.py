@@ -64,7 +64,8 @@ def test_update_svg_roundtrip_keeps_values_and_width():
                 "age_display": g("age_data"), "repos": g("repo_data"),
                 "stars": g("star_data"), "contributed": g("contrib_data"),
                 "commits": g("commit_data"), "followers": g("follower_data"),
-                "prs": "12", "issues": "5", "top_langs": "Python, JavaScript",
+                "prs": "12", "issues": "5", "top_langs": "Python 42%",
+                "top_repos": ["1. a ★12 · Python", "—", "—", "—", "—"],
                 "loc": g("loc_data"),
                 "loc_add": int(g("loc_add").replace(",", "")),
                 "loc_del": int(g("loc_del").replace(",", "").lstrip("-")),
@@ -74,7 +75,7 @@ def test_update_svg_roundtrip_keeps_values_and_width():
             assert "ns0:" not in out
             assert 'width="985px"' in out
             for v in [stats["repos"], stats["stars"], stats["commits"],
-                      "12", "5", "Python, JavaScript"]:
+                      "12", "5", "Python 42%", "1. a ★12 · Python"]:
                 assert str(v) in out
         finally:
             os.unlink(dst)
@@ -102,3 +103,21 @@ def test_language_shares():
     assert 99 <= total <= 101  # rounding tolerance
     assert u.language_shares([]) == []
     assert u.language_shares([{"name": "x", "languages": []}]) == []
+
+
+def test_top_repos():
+    nodes = [
+        {"name": "Joey-1123/b", "stars": 3, "languages": [("Python", 10)]},
+        {"name": "Joey-1123/a", "stars": 12, "languages": []},
+        {"name": "Joey-1123/c", "stars": 7, "languages": [("JS", 5)]},
+    ]
+    top = u.top_repos(nodes, top_n=2)
+    assert top[0]["name"] == "a" and top[0]["stars"] == 12 and top[0]["lang"] == "—"
+    assert top[1]["name"] == "c" and top[1]["lang"] == "JS"
+    long_ = {"name": "Joey-1123/" + "x" * 40, "stars": 99, "languages": []}
+    assert len(u.top_repos([long_])[0]["name"]) <= 25
+    assert u.top_repos([]) == []
+
+
+def test_format_top_repo():
+    assert u.format_top_repo(1, {"name": "a", "stars": 12, "lang": "Python"}) == "1. a ★12 · Python"

@@ -164,6 +164,25 @@ def language_shares(nodes, top_n=4):
     return [(name, round(100 * size / grand)) for name, size in ranked]
 
 
+def top_repos(nodes, top_n=5, max_name=24):
+    """Top scoped repos by stars. Pure function. Names owner-stripped + truncated."""
+    ranked = sorted(nodes, key=lambda n: n.get("stars", 0), reverse=True)[:top_n]
+    out = []
+    for n in ranked:
+        full = n.get("name", "?")
+        short = full.split("/", 1)[-1] if "/" in full else full
+        if len(short) > max_name:
+            short = short[: max_name - 1] + "…"
+        langs = n.get("languages", [])
+        out.append({"name": short, "stars": n.get("stars", 0),
+                    "lang": langs[0][0] if langs else "—"})
+    return out
+
+
+def format_top_repo(i, repo):
+    return f"{i}. {repo['name']} ★{repo['stars']} · {repo['lang']}"
+
+
 def aggregate_languages(nodes, top_n=4):
     """Size-weighted top language names. Pure function (testable)."""
     return [name for name, _ in language_shares(nodes, top_n)]
@@ -403,6 +422,9 @@ def update_svg(filename, stats):
     set_text("pr_data", str(stats.get("prs", "?")))
     set_text("issue_data", str(stats.get("issues", "?")))
     set_text("lang_data", str(stats.get("top_langs", "—")))
+    for i in range(1, 6):
+        rows = stats.get("top_repos", [])
+        set_text(f"top{i}", rows[i - 1] if i <= len(rows) else "—")
     set_text("follower_data", str(stats["followers"]))
     set_text("loc_data", stats["loc"])
     set_text("loc_add", f"{stats['loc_add']:,}")
@@ -465,6 +487,14 @@ def main(argv=None):
     lang_display = " · ".join(f"{n} {p}%" for n, p in shares) if shares else "—"
     print(f"  -> {lang_display}")
 
+    print("Ranking top repos (scoped, by stars)...")
+    top = top_repos(scoped_nodes)
+    top_display = [format_top_repo(i, r) for i, r in enumerate(top, 1)]
+    while len(top_display) < 5:
+        top_display.append("—")
+    for row in top_display:
+        print(f"  -> {row}")
+
     print("Calculating age...")
     age_str, is_birthday = calculate_age()
     age_display = f"{age_str}{'  Birthday!' if is_birthday else ''}"
@@ -478,6 +508,7 @@ def main(argv=None):
         "prs": contrib["prs"] if contrib else "?",
         "issues": contrib["issues"] if contrib else "?",
         "top_langs": lang_display,
+        "top_repos": top_display,
         "followers": user["followers"],
         "following": user["following"],
         "loc": format_loc(disp_net),
