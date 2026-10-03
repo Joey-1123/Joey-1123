@@ -10,6 +10,8 @@ import time
 import xml.etree.ElementTree as etree
 import requests
 
+etree.register_namespace("", "http://www.w3.org/2000/svg")
+
 USERNAME = "Joey-1123"
 BIRTHDAY = datetime.date(2005, 5, 1)
 CACHE_PATH = "cache/loc_cache.json"
