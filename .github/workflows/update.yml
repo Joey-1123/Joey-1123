@@ -10,9 +10,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: update-profile-stats
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -20,13 +25,21 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Restore LOC cache
+        uses: actions/cache@v4
+        with:
+          path: cache
+          key: loc-cache-${{ github.run_id }}
+          restore-keys: |
+            loc-cache-
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
       - name: Generate profile SVGs
         run: python update.py
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5

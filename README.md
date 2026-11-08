@@ -1,5 +1,7 @@
 <!-- Originally created by Joey-1123 (https://github.com/Joey-1123) -->
 <!-- Inspired by Andrew6rant (https://github.com/Andrew6rant/Andrew6rant) -->
+<!-- Local run: set GH_TOKEN (or ACCESS_TOKEN) then `python update.py`. -->
+<!-- Lines of Code shows attributed lines when GitHub provides contributor stats, else repo-wide. -->
 <a href="https://github.com/Joey-1123">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Joey-1123/Joey-1123/main/dark_mode.svg">
