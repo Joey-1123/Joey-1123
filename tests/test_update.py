@@ -172,3 +172,7 @@ def test_update_svg_roundtrip_keeps_values_and_a11y(tmp_path):
     assert text("loc_del") == "34,567"
     assert text("loc_data") == "1.2M"
     assert text("age_data") == "21 years"
+
+    raw = svg_path.read_text(encoding="utf-8")
+    assert "\u2500" in raw
+    assert "\u00e2\u201d\u20ac" not in raw
